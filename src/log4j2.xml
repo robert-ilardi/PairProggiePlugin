@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="com.ilardi.systems.util">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %logger{36} - %msg%n" />
+		</Console>
+
+		<LogEventQueueAppender name="Queue">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %logger{36} - %msg%n" />
+		</LogEventQueueAppender>
+	</Appenders>
+
+	<Loggers>
+		<Root level="TRACE">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="Queue" />
+		</Root>
+	</Loggers>
+</Configuration>

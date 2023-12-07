@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+		point="org.eclipse.ui.views">
+		<view
+			class="com.ilardi.systems.probud.ProggieBuddiePlugin"
+			icon="rl16x16.jpg"
+			id="com.ilardi.systems.probud.ProggieBuddieUi"
+			name="Proggie Buddie">
+		</view>
+	</extension>
+ <extension
+       point="org.eclipse.ui.commands">
+    <command
+          id="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+          name="Proggie Buddie">
+       <commandParameter
+             id="ProggieBuddie.ActionCode"
+             name="ActionCode"
+             optional="true">
+       </commandParameter>
+    </command>
+ </extension>
+ <extension
+       point="org.eclipse.ui.handlers">
+    <handler
+          class="com.ilardi.systems.probud.ProggieBuddieEclipseCommandHandler"
+          commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd">
+    </handler>
+ </extension>
+ <extension
+       point="org.eclipse.ui.bindings">
+    <key
+          commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+          contextId="org.eclipse.jdt.ui.javaEditorScope"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+          sequence="M1+M3+SPACE">
+       <parameter
+             id="ProggieBuddie.ActionCode"
+             value="HotKey">
+       </parameter>
+    </key>
+ </extension>
+ <extension
+       point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="true"
+          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+       <menu
+             icon="rl16x16.jpg"
+             label="Proggie Buddie">
+          <command
+                commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                label="Send General Chat"
+                style="push">
+             <parameter
+                   name="ProggieBuddie.ActionCode"
+                   value="SendGeneralChat">
+             </parameter>
+          </command>
+          <menu
+                label="Comment Generation">
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask to Comment"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskComment">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask to Comment Method"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCommentMethod">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask to Comment Class"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCommentClass">
+                </parameter>
+             </command>
+          </menu>
+          <menu
+                label="Code Generation">
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Code Generation"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCodeGen">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Class Code Generation"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCodeGenClass">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Method Code Generation"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCodeGenMethod">
+                </parameter>
+             </command>
+          </menu>
+          <menu
+                label="Code Review">
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Code Review"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCodeReview">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Class Code Review"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCodeReviewClass">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Method Code Review"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskCodeReviewMethod">
+                </parameter>
+             </command>
+          </menu>
+          <menu
+                label="Code Optimization">
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Code Optimization"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskOptimize">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Class Optimization"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskOptimizeClass">
+                </parameter>
+             </command>
+             <command
+                   commandId="com.ilardi.systems.probud.ProggieBuddie.ProggieBuddleEclipseCmd"
+                   label="Ask for Method Optimization"
+                   style="push">
+                <parameter
+                      name="ProggieBuddie.ActionCode"
+                      value="AskOptimizeMethod">
+                </parameter>
+             </command>
+          </menu>
+       </menu>
+    </menuContribution>
+ </extension>
+</plugin>
